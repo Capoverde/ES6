@@ -64,3 +64,6 @@ var x = obj.x,
 
 
 console.log(x, y, z); //output >> 7,5,8
+
+
+// ------- Adding functions to an object ------- //
