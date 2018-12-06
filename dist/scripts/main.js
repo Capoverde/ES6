@@ -36,3 +36,5 @@ console.log(user.firstname, user.lastname, user.fullname);
 
 
 // ------- Object destructuring ------- //
+
+//
