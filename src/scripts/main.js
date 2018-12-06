@@ -64,4 +64,3 @@ console.log(multiply(3, 9)); // output >> 27
 // ---- RST OPERATOR ----- //
 
 
-
