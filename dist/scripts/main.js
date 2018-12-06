@@ -63,3 +63,52 @@ func[0]();
 func[1]();
 func[4]();
 // output >> 0,1,4
+
+// ----- let gotchas ------ //
+
+// var version
+console.log(foo);
+
+var foo = "hello";
+
+// output >> undefined
+
+// let version
+
+console.log(bar);
+
+var bar = "World";
+
+// output >> ReferenceError: bar is not defined
+
+// TDZ ( Temporal Dead Zone ) - a period between entering scope and being declared where they cannot be accessed. 
+
+// redeclaration of let is impossible
+
+// let baz = "hello";
+// console.log(baz);
+
+// let baz = "world";
+// console.log(baz);
+
+// output >> SyntaxError: baz has allready been declared
+
+// solve?
+var baz = "hello";
+console.log(baz);
+{
+  var _baz = "world";
+  console.log(_baz);
+}
+// output >> "hello" "world"
+
+
+// let baz = "hello";
+// console.log(baz);
+// {
+//   let baz = "world";
+//   var baz ="some string here"
+//   console.log(baz);
+// }
+
+// output >> SyntaxEroor: baz has already been declared
