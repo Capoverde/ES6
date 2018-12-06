@@ -34,4 +34,4 @@ console.log(user.firstname, user.lastname, user.fullname);
 // output >> Jan | Kowalski | Jan Kowalski
 
 
-// 
+// ------- Object destructuring ------- //
