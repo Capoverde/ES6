@@ -66,4 +66,41 @@ console.log(multiply(3)); // output >> 9
 console.log(multiply()); // output >> 4
 console.log(multiply(3, 9)); // output >> 27
 
-// ---- RST OPERATOR ----- //
+// ---- REST OPERATOR ----- //
+
+// ES5 version
+
+function sum() {
+  // Trzeba było zamieić arguments na tablicę zeby mozna było iterować
+  var numbers = Array.prototype.slice.call(arguments);
+  var result = 0;
+
+  numbers.forEach(function (number) {
+    result += number;
+  });
+  return result;
+}
+console.log(sum(3, 5, 7, 9));
+
+// ES6
+function sum() {
+  //wystarczy dodac 3 kropki, które oznaczaja: 
+  // Zamien argument, lub argumenty na tablicę i mozna iterowac
+
+  var result = 0;
+
+  for (var _len = arguments.length, numbers = Array(_len), _key = 0; _key < _len; _key++) {
+    numbers[_key] = arguments[_key];
+  }
+
+  numbers.forEach(function (number) {
+    result += number;
+  });
+  return result;
+}
+console.log(sum(3, 5, 7, 9));
+
+// function sum(...numbers, arg1, arg2, arg3) 
+// w tym wypadku nie mozna uzyc spreda, wyrzuci syntaxError
+
+// function sum(arg1, arg2, arg3, ...numbers) tak jest ok
