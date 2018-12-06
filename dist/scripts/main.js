@@ -93,3 +93,5 @@ var myObject = {
 console.log(myObject.fullname('Jan', 'Kowalski'));
 
 // Po usunięciu słówka function i dwukropka  otrzymujemy ten sam output
+
+// ------- Template Strings ------- //
