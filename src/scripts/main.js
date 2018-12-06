@@ -92,3 +92,8 @@ console.log(myObject.fullname('Jan', 'Kowalski'));
 
 // ------- Template Strings ------- //
 
+let serviceId = 123;
+
+let url = `/service/${serviceId}`;
+
+console.log(url);
