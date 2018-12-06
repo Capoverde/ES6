@@ -64,3 +64,28 @@ console.log(x, y, z); //output >> 7,5,8
 
 // ------- Adding functions to an object ------- //
 
+// ES5
+
+// let myObject = {
+//   prop1: "Hello",
+//   prop2: "World",
+//   fullname: function(firstname, lastname){
+//     let fullname = `${firstname} ${lastname}`;
+//     return fullname;
+//   }
+// }
+// console.log(myObject.fullname('Jan', 'Kowalski')); // output >> Jan Kowalski
+
+// ES6
+
+let myObject = {
+  prop1: "Hello",
+  prop2: "World",
+  fullname (firstname, lastname){
+    let fullname = `${firstname} ${lastname}`;
+    return fullname;
+  }
+}
+console.log(myObject.fullname('Jan', 'Kowalski')); 
+
+// Po usunięciu słówka function i dwukropka  otrzymujemy ten sam output
