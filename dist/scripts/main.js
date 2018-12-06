@@ -37,4 +37,30 @@ console.log(user.firstname, user.lastname, user.fullname);
 
 // ------- Object destructuring ------- //
 
-//
+// ES5
+
+// let obj = {
+//   x: 7,
+//   y: 5,
+//   z: 8
+// }
+
+// let x = obj.x,
+//     y = obj.y,
+//     z = obj.z
+
+// console.log(x, y, z); // output >> 7,5,8
+
+// ES6
+var obj = {
+  x: 7,
+  y: 5,
+  z: 8
+};
+
+var x = obj.x,
+    y = obj.y,
+    z = obj.z;
+
+
+console.log(x, y, z); //output >> 7,5,8
