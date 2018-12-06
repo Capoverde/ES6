@@ -102,3 +102,4 @@ console.log(baz);
 // }
 
 // output >> SyntaxEroor: baz has already been declared
+
