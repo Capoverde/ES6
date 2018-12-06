@@ -1,3 +1,5 @@
+'use strict';
+
 //  -------- functions -------- //
 
 //Default Parameters
@@ -129,4 +131,80 @@
 // }
 
 // console.log(foo(2,5)); // output >> 10
-"use strict";
+
+// ------ bindibg this with Arrow Functions ------ //
+
+// ES5
+
+// var person = {
+//   firstName: 'Jan',
+//   lastName: 'Kowalski',
+//   getFullname: function () {
+//     console.log(this.firstName + ' ' + this.lastName);
+//   }
+// }
+// person.getFullname(); //output >> Jan Kowalski
+
+// with function exression
+
+// let person = {
+//   firstName: 'Jan',
+//   lastName: 'Kowalski',
+//   getFullname: function () {
+//     var name = function(){
+//       console.log(this.firstName + ' ' + this.lastName);
+//     }
+//     return name(); //output >> undefined undefined
+//   }
+// }
+// person.getFullname();
+
+// 2 rozwiązania:
+
+// #1
+
+
+// let person = {
+//   firstName: 'Jan',
+//   lastName: 'Kowalski',
+//   getFullname: function () {
+//     var self = this;
+//     var name = function(){
+//       console.log(self.firstName + ' ' + self.lastName);
+//     }
+//     return name(); //output >> Jan kowalski
+//   }
+// }
+// person.getFullname();
+
+// #2
+// Bind method:
+
+// let person = {
+//   firstName: 'Jan',
+//   lastName: 'Kowalski',
+//   getFullname: function () {
+//     var name = function(){
+//       console.log(this.firstName + ' ' + this.lastName);
+//     }.bind(this);
+//     return name(); //output >> Jan kowalski
+//   }
+// }
+// person.getFullname();
+
+// ES6
+
+var person = {
+  firstName: 'Jan',
+  lastName: 'Kowalski',
+  getFullname: function getFullname() {
+    var _this = this;
+
+    var name = function name() {
+      return console.log(_this.firstName + ' ' + _this.lastName);
+    };
+
+    return name(); //output >> Jan kowalski
+  }
+};
+person.getFullname();
