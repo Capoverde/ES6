@@ -32,3 +32,6 @@ function createUser(firstname, lastname){
 let user = createUser('Jan', 'Kowalski')
 console.log(user.firstname, user.lastname, user.fullname);
 // output >> Jan | Kowalski | Jan Kowalski
+
+
+// 
