@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "AAQC,AAAA,IAAI,CAAA;EACH,UAAU,ECRD,OAAO;CDgBjB;;AATA,AAGC,IAHG,CAGH,UAAU,CAAA;EACR,MAAM,EAAE,MAAM;EACd,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;CACf",
+    "sources": [
+        "../../src/sass/main.scss",
+        "../../src/sass/_vars.scss",
+        "../../src/sass/_reset.scss",
+        "../../src/sass/_mixins.scss",
+        "../../src/sass/_functions.scss",
+        "../../src/sass/_nav.scss",
+        "../../src/sass/_header.scss",
+        "../../src/sass/_footer.scss"
+    ],
+    "names": [],
+    "file": "main.min.css"
+}
