@@ -101,3 +101,5 @@ var serviceId = 123;
 var url = '/service/' + serviceId;
 
 console.log(url);
+
+// ----- Object.assign ----- //
