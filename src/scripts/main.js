@@ -112,3 +112,20 @@
 // let b = [1, ...a, 5];
 // console.log(b); //output >> [1,1,2,3,5]
 
+// ----- Arrow Functions ----- //
+
+// Arrow functions are always expressions
+
+// let bar = a => a * 5
+// console.log(bar(3)); //output >> 15
+// let foo = (a, b) => a * b;
+
+// let foo = (a, b) => {
+//   let counter = 0;
+//   for (let i =0; i < b; i++){
+//     counter += a;
+//   }
+//   return counter;
+// }
+
+// console.log(foo(2,5)); // output >> 10
