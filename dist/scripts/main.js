@@ -1,114 +1,35 @@
 "use strict";
 
-// ------- let keyword -------- //
+//  -------- functions -------- //
 
-// let version
+//Default Parameters
 
+// ES5 version:
 
-function showLength(arr) {
-  if (arr.length > 5) {
-    var _greater = arr + " is longer then 5";
-  } else {
-    var smaller = arr + " is smaller then 5";
-    console.log(greater);
-    console.log(smaller);
-  }
+function box(height, color, url) {
+  var height = height || 50,
+      color = color || "green",
+      url = url || "google.com";
+  console.log('height', height, 'color', color, 'url', url);
 }
-showLength([1, 2, 3]);
-
-// var version
-
-function showLength(arr) {
-  if (arr.length > 5) {
-    var greater = arr + " is longer then 5";
-  } else {
-    var smaller = arr + " is smaller then 5";
-    console.log(greater);
-    console.log(smaller);
-  }
+console.log(box(0));
+// output >> height 50 color green url google.com
+// to fix the problem: 
+function box(height, color, url) {
+  var height = height !== undefined ? height : 50;
+  color = color || "green", url = url || "google.com";
+  console.log('height', height, 'color', color, 'url', url);
 }
-showLength([1, 2, 3]);
+console.log(box(0));
+// output height >> 0
 
-// ------ let in for loops ------ //
+// ES6 version: 
+function box() {
+  var height = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 50;
+  var color = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'green';
+  var url = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'google.com';
 
-// var version
-
-var func = [];
-
-for (i = 0; i < 5; i++) {
-  func.push(function () {
-    console.log(i);
-  });
+  console.log('height', height, 'color', color, 'url', url);
 }
-
-func[0]();
-func[1]();
-func[4]();
-// output >> 5,5,5
-
-// let version
-var func = [];
-
-var _loop = function _loop(_i) {
-  func.push(function () {
-    console.log(_i);
-  });
-};
-
-for (var _i = 0; _i < 5; _i++) {
-  _loop(_i);
-}
-
-func[0]();
-func[1]();
-func[4]();
-// output >> 0,1,4
-
-// ----- let gotchas ------ //
-
-// var version
-console.log(foo);
-
-var foo = "hello";
-
-// output >> undefined
-
-// let version
-
-console.log(bar);
-
-var bar = "World";
-
-// output >> ReferenceError: bar is not defined
-
-// TDZ ( Temporal Dead Zone ) - a period between entering scope and being declared where they cannot be accessed. 
-
-// redeclaration of let is impossible
-
-// let baz = "hello";
-// console.log(baz);
-
-// let baz = "world";
-// console.log(baz);
-
-// output >> SyntaxError: baz has allready been declared
-
-// solve?
-var baz = "hello";
-console.log(baz);
-{
-  var _baz = "world";
-  console.log(_baz);
-}
-// output >> "hello" "world"
-
-
-// let baz = "hello";
-// console.log(baz);
-// {
-//   let baz = "world";
-//   var baz ="some string here"
-//   console.log(baz);
-// }
-
-// output >> SyntaxEroor: baz has already been declared
+console.log(box(0));
+// output >> height 0 .....
