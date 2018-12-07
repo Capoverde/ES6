@@ -98,3 +98,23 @@ console.log(typeof(numbers[Symbol.iterator]));
 //  output >> function
 console.log(typeof(person[Symbol.iterator]));
 // output >> undefined
+
+// -------------------- Weak Maps   -------------------- //
+
+// Special types of maps, You can onlu use objects as a keys, 
+// You can't use primitive data types (strings, booleans, numbers)
+// You can't use for of to iterate over the weak map
+
+let personOne = {}
+let personTwo = {}
+
+let people = new WeakMap();
+
+people.set(personOne, 'Jan');
+people.set(personTwo, 'Piotr');
+
+console.log(people.get(personOne)); // output >> Jan
+console.log(people.get(personTwo)); // output >> Piotr
+
+
+
