@@ -18,3 +18,20 @@ console.log(a,b,c); // outut >> banana, appale, grapes
 
 // let [ a, ,c ] = fruits;
 // console.log(a,c); // output >> banana, grapes
+
+
+// -------- for of loop --------- //
+
+let fruits1 = ['banana', 'apples', 'grapes', 'plums'];
+
+// #1 for in <- older way of looping
+
+for (let i in fruits1){
+  console.log(fruits1[i]); // output >> banana, apples, grapes, plums
+}
+
+// #2 for of <- ES6 new loop
+
+for (let fruit of fruits1){
+  console.log(fruit); //output >> banana, apples, grapes, plums
+}
