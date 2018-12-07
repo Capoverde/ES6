@@ -39,6 +39,8 @@ console.log(cars); // >> Set { 'Audi', 'Ford', 'Mercedes }
 console.log(a, b, c); // >> Audi Ford Mercedes
 
 // ---------------------------- Weak Sets -------------------------------- //
+// Tylko obiekty, nieiterowalne
+
 
 var weakCars = new WeakSet();
 
@@ -51,3 +53,57 @@ console.log(weakCars.has(passenger)); // >> true
 
 weakCars.delete(passenger);
 console.log(weakCars.has(passenger)); // >> false
+
+// ------------------------- When should we use Weak Sets ---------------------------- //
+// They are used when You don't want to mutate array
+var carSlides = [{ car: 'Audi', seen: false, image: 'url' }, { car: 'Ford', seen: false, image: 'url' }, { car: 'Mercedes', seen: false, image: 'url' }, { car: 'VW', seen: false, image: 'url' }];
+
+// function clicked(carSlides){
+//   carSlides.forEach(car =>{
+//     //  mutates each object in the carSlides array
+//     car.seen = true // seen jest teraz ustawione na true
+//   })
+// }
+// Żeby zapobiec mutowaniu tablicy: 
+var carsViewed = new WeakSet();
+
+function clicked(carSlides) {
+  carSlides.forEach(function (car) {
+    carsViewed.add(car); //
+  });
+}
+
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+  for (var _iterator = carSlides[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    var car = _step.value;
+
+    console.log(carsViewed.has(car)); // >> true, true, true, true
+  }
+} catch (err) {
+  _didIteratorError = true;
+  _iteratorError = err;
+} finally {
+  try {
+    if (!_iteratorNormalCompletion && _iterator.return) {
+      _iterator.return();
+    }
+  } finally {
+    if (_didIteratorError) {
+      throw _iteratorError;
+    }
+  }
+}
+
+console.log(carSlides); //seen jest cały czas na false
+
+// lets say this is sets true when user clicks on a link somewhere
+
+// let linkClicked = true;
+//  if(linkClicked){
+//    clicked(carSlides);
+//  }
+// console.log(carSlides);
