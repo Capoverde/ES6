@@ -56,13 +56,32 @@ function waitingFor(name, done){
 
 
 // Pending - transitioning form one state to another
-// Fullfiled
+// Fullfiled -
 // Rejected
 
 // Promise to objekt z 3 funkcjami
-let Promise ={
-  then() {}, //uruchamiana kiedy jest sukces
-  catch() {}, //uruchamiana kiedy jest error
-  all() {} //uruchamianie wileu promisów jako tablicy
-  // ....
+// let Promise ={
+//   then() {}, //uruchamiana kiedy jest sukces
+//   catch() {}, //uruchamiana kiedy jest error
+//   all() {} //uruchamianie wileu promisów jako tablicy
+//   // ....
+// }
+
+// ------------------------------ Promises in action ------------------------------ //
+
+function waitingFor(name){
+  console.log(`waiting for ${name}`);
+
+  return new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      if(name === 'Mike'){
+        reject(Error(`Mike is always late!!!`));
+      }else{
+        resolve(name);
+      }
+    }, 2000);
+  })
 }
+waitingFor('Piotr').then((name)=>{
+  console.log(`Grate we got ${name}`);
+});
