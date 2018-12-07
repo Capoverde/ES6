@@ -47,3 +47,22 @@ function waitingFor(name, done){
 //   }
 //  })
 // }
+
+
+// ------------------------------ Promise Concept ------------------------------ //
+
+// Promises can be in one of three states
+
+
+
+// Pending - transitioning form one state to another
+// Fullfiled
+// Rejected
+
+// Promise to objekt z 3 funkcjami
+let Promise ={
+  then() {}, //uruchamiana kiedy jest sukces
+  catch() {}, //uruchamiana kiedy jest error
+  all() {} //uruchamianie wileu promisów jako tablicy
+  // ....
+}
