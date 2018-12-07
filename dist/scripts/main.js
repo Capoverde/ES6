@@ -38,3 +38,5 @@ var myAudi = new Audi({
 });
 
 console.log(myAudi.description); // >> Great German car
+
+// ----------- ES6 CLASSES ------------- //
