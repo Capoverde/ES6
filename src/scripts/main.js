@@ -35,3 +35,15 @@ for (let i in fruits1){
 for (let fruit of fruits1){
   console.log(fruit); //output >> banana, apples, grapes, plums
 }
+
+// --------------- Array.find --------------- //
+
+let services = [
+  {name: 'nails', activated: false},
+  {name: 'haircut', activated: true},
+  {name: 'feet therapy', activated: true}
+];
+
+let activate = services.find(service => service.activated);
+console.log(activate); //output >> {name: 'haircut', activated: true}
+// Zwraca pierwszy, któr jest na true

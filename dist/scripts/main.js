@@ -46,6 +46,8 @@ try {
 
     console.log(fruit); //output >> banana, apples, grapes, plums
   }
+
+  // --------------- Array.find --------------- //
 } catch (err) {
   _didIteratorError = true;
   _iteratorError = err;
@@ -60,3 +62,11 @@ try {
     }
   }
 }
+
+var services = [{ name: 'nails', activated: false }, { name: 'haircut', activated: true }, { name: 'feet therapy', activated: true }];
+
+var activate = services.find(function (service) {
+  return service.activated;
+});
+console.log(activate); //output >> {name: 'haircut', activated: true}
+// Zwraca pierwszy, któr jest na true
