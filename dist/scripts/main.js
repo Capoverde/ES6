@@ -117,6 +117,8 @@ try {
     console.log(key + ' = ' + value);
   }
   // output >> carOne = Audi, carTwo = Ford, carThree = GM, carFour = BMW
+
+  // -------------------- Plain objects and the for of loop   -------------------- //
 } catch (err) {
   _didIteratorError2 = true;
   _iteratorError2 = err;
@@ -131,3 +133,9 @@ try {
     }
   }
 }
+
+var person = {
+  name: 'Jan',
+  address: '123 str, London',
+  ocuppation: 'JS Developer'
+};

@@ -80,3 +80,21 @@ for(let [key, value] of cars){
   console.log(`${key} = ${value}`);
 }
 // output >> carOne = Audi, carTwo = Ford, carThree = GM, carFour = BMW
+
+// -------------------- Plain objects and the for of loop   -------------------- //
+
+let person = {
+    name: 'Jan',
+    address: '123 str, London',
+    ocuppation: 'JS Developer'
+}
+//  for(let prop of prson){
+//    console.log(prop)
+//  }
+//  output >> TypeEroor: person[Symbol.iterator] is not a function
+
+let numbers = [ 1, 2, 3];
+console.log(typeof(numbers[Symbol.iterator]));
+//  output >> function
+console.log(typeof(person[Symbol.iterator]));
+// output >> undefined
