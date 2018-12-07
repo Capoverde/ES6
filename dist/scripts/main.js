@@ -37,3 +37,17 @@ var _cars = _slicedToArray(cars, 3),
 
 console.log(cars); // >> Set { 'Audi', 'Ford', 'Mercedes }
 console.log(a, b, c); // >> Audi Ford Mercedes
+
+// ---------------------------- Weak Sets -------------------------------- //
+
+var weakCars = new WeakSet();
+
+weakCars.add({ driver: 'Piotr' });
+
+var passenger = { passenger: 'Inka' };
+
+weakCars.add(passenger);
+console.log(weakCars.has(passenger)); // >> true
+
+weakCars.delete(passenger);
+console.log(weakCars.has(passenger)); // >> false
