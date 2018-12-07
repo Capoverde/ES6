@@ -17,5 +17,27 @@ cars.add('Mercedes');
 console.log('total number of cars', cars.size); // >> total number of cars 3
 // drugie Audi zostało zignorowane
 
+// ----------------- Sets for..of and Destructuring ------------------------- //
+
+// for of loop:
+// for(let car of cars){
+//   console.log(car); // >> Audi, Ford, Mercedes
+// }
+
+// Destructuring:
+
+let [ a, b, c ] = cars;
+console.log(cars); // >> Set { 'Audi', 'Ford', 'Mercedes }
+console.log(a, b, c); // >> Audi Ford Mercedes
+
+
+
+
+
+
+
+
+
+
 
 
