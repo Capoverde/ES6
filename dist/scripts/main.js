@@ -70,3 +70,22 @@ var activate = services.find(function (service) {
 });
 console.log(activate); //output >> {name: 'haircut', activated: true}
 // Zwraca pierwszy, któr jest na true
+
+// -------------------- Maps -------------------- //
+
+
+var carOne = {
+  make: 'Audi'
+};
+
+var carTwo = {
+  make: 'Ford'
+};
+
+var carAge = new Map();
+
+carAge.set(carOne, 3);
+carAge.set(carTwo, 5);
+
+console.log(carAge);
+// output >> Aap { { make: 'Audi } => 3, { make: 'Ford } => 5}
