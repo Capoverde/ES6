@@ -101,3 +101,20 @@ console.log(url);
 // ----- Object.assign ----- //
 
 
+let item = {
+  id: 1,
+  content: 'ES6',
+  completed: false
+}
+console.log(item); //output >> completed: false
+
+// completed: true
+
+let newItem = Object.assign({}, item, {completed: true});
+console.log(newItem); //output >> completed: true
+
+// +++to samo za pomocą spread operator:+++
+
+// let newItem = { ...item, completed: true}
+// console.log(newItem); //output >> completed: true
+

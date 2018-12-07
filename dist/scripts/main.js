@@ -103,3 +103,21 @@ var url = '/service/' + serviceId;
 console.log(url);
 
 // ----- Object.assign ----- //
+
+
+var item = {
+  id: 1,
+  content: 'ES6',
+  completed: false
+};
+console.log(item); //output >> completed: false
+
+// completed: true
+
+var newItem = Object.assign({}, item, { completed: true });
+console.log(newItem); //output >> completed: true
+
+// +++to samo za pomocą spread operator:+++
+
+// let newItem = { ...item, completed: true}
+// console.log(newItem); //output >> completed: true
