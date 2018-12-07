@@ -67,3 +67,16 @@ carAge.set(carTwo, 5);
 console.log(carAge);
 // output >> Aap { { make: 'Audi } => 3, { make: 'Ford } => 5}
 
+// -------------------- Maps with for of  -------------------- //
+
+let cars = new Map();
+
+cars.set('carOne', 'Audi');
+cars.set('carTwo', 'Ford');
+cars.set('carThree', 'GM');
+cars.set('carFour', 'BMW');
+
+for(let [key, value] of cars){
+  console.log(`${key} = ${value}`);
+}
+// output >> carOne = Audi, carTwo = Ford, carThree = GM, carFour = BMW
