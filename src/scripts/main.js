@@ -1,120 +1,20 @@
-//  ------------- OBJECTS ----------------- //
 
-// -- Object initialization -- //
+// ----------------- Arrays ---------------------- //
 
+// ----- Array Destructuring ----- //
 
+let fruits = ['banana', 'apples', 'grapes'];
 
-//  Objects literals
-// ES5
+// let a = fruits[0],
+//     b = fruits[1],
+//     c = fruits[2];
 
-// function createUser(firstname, lastname){
-//   let fullname = `${firstname} ${lastname}`;
-//   return {
-//     firstname: firstname,
-//     lastname: lastname,
-//     fullname: fullname
-//   }
-// }
-// let user = createUser('Jan', 'Kowalski')
-// console.log(user.firstname, user.lastname, user.fullname);
-// output >> Jan | Kowalski | Jan Kowalski
+    // console.log(a,b,c); // outut >> banana, appale, grapes
 
-// ES6
+// Simplier method - ARRAY NOTATION :
 
-function createUser(firstname, lastname){
-  let fullname = `${firstname} ${lastname}`;
-  return {
-    firstname,
-    lastname,
-    fullname
-  }
-}
-let user = createUser('Jan', 'Kowalski')
-console.log(user.firstname, user.lastname, user.fullname);
-// output >> Jan | Kowalski | Jan Kowalski
+let [ a,b,c ] = fruits;
+console.log(a,b,c); // outut >> banana, appale, grapes
 
-
-// ------- Object destructuring ------- //
-
-// ES5
-
-// let obj = {
-//   x: 7,
-//   y: 5,
-//   z: 8
-// }
-
-// let x = obj.x,
-//     y = obj.y,
-//     z = obj.z
-
-// console.log(x, y, z); // output >> 7,5,8
-
-// ES6
-let obj = {
-  x: 7,
-  y: 5,
-  z: 8
-}
-
-let { x, y, z } = obj;
-
-console.log(x, y, z); //output >> 7,5,8
-
-
-// ------- Adding functions to an object ------- //
-
-// ES5
-
-// let myObject = {
-//   prop1: "Hello",
-//   prop2: "World",
-//   fullname: function(firstname, lastname){
-//     let fullname = `${firstname} ${lastname}`;
-//     return fullname;
-//   }
-// }
-// console.log(myObject.fullname('Jan', 'Kowalski')); // output >> Jan Kowalski
-
-// ES6
-
-let myObject = {
-  prop1: "Hello",
-  prop2: "World",
-  fullname (firstname, lastname){
-    let fullname = `${firstname} ${lastname}`;
-    return fullname;
-  }
-}
-console.log(myObject.fullname('Jan', 'Kowalski')); 
-
-// Po usunięciu słówka function i dwukropka  otrzymujemy ten sam output
-
-// ------- Template Strings ------- //
-
-let serviceId = 123;
-
-let url = `/service/${serviceId}`;
-
-console.log(url);
-
-// ----- Object.assign ----- //
-
-
-let item = {
-  id: 1,
-  content: 'ES6',
-  completed: false
-}
-console.log(item); //output >> completed: false
-
-// completed: true
-
-let newItem = Object.assign({}, item, {completed: true});
-console.log(newItem); //output >> completed: true
-
-// +++to samo za pomocą spread operator:+++
-
-// let newItem = { ...item, completed: true}
-// console.log(newItem); //output >> completed: true
-
+// let [ a, ,c ] = fruits;
+// console.log(a,c); // output >> banana, grapes
