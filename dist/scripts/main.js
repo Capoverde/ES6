@@ -70,6 +70,26 @@ function waitingFor(name, done) {
 
 // ------------------------------ Promises in action ------------------------------ //
 
+// function waitingFor(name){
+//   console.log(`waiting for ${name}`);
+
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//       if(name === 'Mike'){
+//         reject(Error(`Mike is always late!!!`));
+//       }else{
+//         resolve(name);
+//       }
+//     }, 2000);
+//   })
+// }
+// waitingFor('Piotr').then((name)=>{
+//   console.log(`Grate we got ${name}`);
+// });
+
+
+// ------------------------------ Promises in action 2 ------------------------------ //
+
 function waitingFor(name) {
   console.log('waiting for ' + name);
 
@@ -83,8 +103,20 @@ function waitingFor(name) {
     }, 2000);
   });
 }
-waitingFor('Piotr').then(function (name) {
-  console.log('Grate we got ' + name);
-});
 
-// ------------------------------ Promises in action 2 ------------------------------ //
+function waitForFriend(name) {
+  return function () {
+    return waitingFor(name);
+  };
+}
+
+function leave() {
+  console.log('Grate! We have everyone!');
+}
+
+var gotImpatient = function gotImpatient(error) {
+  console.log(error.message);
+  return Promise.resolve('We\'r leaving');
+};
+
+waitingFor('Piotr').then(waitForFriend('Thomas')).then(waitForFriend('Nichelle')).then(waitForFriend('Adam')).then(waitForFriend('John')).catch(gotImpatient).then(leave);
