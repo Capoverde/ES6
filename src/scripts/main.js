@@ -85,3 +85,7 @@ function waitingFor(name){
 waitingFor('Piotr').then((name)=>{
   console.log(`Grate we got ${name}`);
 });
+
+
+// ------------------------------ Promises in action 2 ------------------------------ //
+
