@@ -119,11 +119,11 @@ function waitingFor(name, done){
 // }
 
 // waitingFor('Piotr').then(waitForFriend('Thomas'))
-       .then(waitForFriend('Nichelle'))
-       .then(waitForFriend('Adam'))
-       .then(waitForFriend('John'))
-       .catch(gotImpatient)
-       .then(leave);
+      //  .then(waitForFriend('Nichelle'))
+      //  .then(waitForFriend('Adam'))
+      //  .then(waitForFriend('John'))
+      //  .catch(gotImpatient)
+      //  .then(leave);
 
 // ------------------------------ Run multiple Promises at once ------------------------------ //
 
@@ -143,9 +143,15 @@ function waitingFor(name){
 
 function waitForall(){
   return Promise.all([
-    waitingoFor('Piotr'),
-    waitingoFor('Adam'),
-    waitingoFor('John')
+    waitingFor('Piotr'),
+    waitingFor('Adam'),
+    waitingFor('John')
   ]);
 }
+
+waitForall().then((friends)=>{
+   console.log(`Great! 👏 ${friends[0]} is 🚶`);
+   console.log(`Great! 👏 ${friends[1]} is 🚶`);
+   console.log(`Great! 👏 ${friends[2]} is 🚶`);
+});
 
