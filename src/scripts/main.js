@@ -89,6 +89,44 @@ function waitingFor(name, done){
 
 // ------------------------------ Promises in action 2 ------------------------------ //
 
+// function waitingFor(name){
+//   console.log(`waiting for ${name}`);
+
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(()=>{
+//       if(name === 'Mike'){
+//         reject(Error(`Mike is always late!!!`));
+//       }else{
+//         resolve(name);
+//       }
+//     }, 2000);
+//   })
+// }
+
+// function waitForFriend(name){
+//   return function(){
+//     return waitingFor(name)
+//   }
+// }
+
+// function leave(){
+//   console.log('Grate! We have everyone!');
+// }
+
+// let gotImpatient = function(error){
+//   console.log(error.message);
+//   return Promise.resolve('We\'r leaving')
+// }
+
+// waitingFor('Piotr').then(waitForFriend('Thomas'))
+       .then(waitForFriend('Nichelle'))
+       .then(waitForFriend('Adam'))
+       .then(waitForFriend('John'))
+       .catch(gotImpatient)
+       .then(leave);
+
+// ------------------------------ Run multiple Promises at once ------------------------------ //
+
 function waitingFor(name){
   console.log(`waiting for ${name}`);
 
@@ -103,24 +141,11 @@ function waitingFor(name){
   })
 }
 
-function waitForFriend(name){
-  return function(){
-    return waitingFor(name)
-  }
+function waitForall(){
+  return Promise.all([
+    waitingoFor('Piotr'),
+    waitingoFor('Adam'),
+    waitingoFor('John')
+  ]);
 }
 
-function leave(){
-  console.log('Grate! We have everyone!');
-}
-
-let gotImpatient = function(error){
-  console.log(error.message);
-  return Promise.resolve('We\'r leaving')
-}
-
-waitingFor('Piotr').then(waitForFriend('Thomas'))
-       .then(waitForFriend('Nichelle'))
-       .then(waitForFriend('Adam'))
-       .then(waitForFriend('John'))
-       .catch(gotImpatient)
-       .then(leave);
